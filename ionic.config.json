@@ -1,0 +1,7 @@
+{
+  "name": "ionic-laravel-image",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
