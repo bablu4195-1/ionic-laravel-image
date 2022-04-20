@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>master</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="CreateForm">
+    <ion-item>
+      <ion-label position="floating">Name</ion-label>
+      <ion-input type="text" formControlName="name" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Detail</ion-label>
+      <ion-input type="text" formControlName="detail" required></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Image</ion-label>
+      <ion-input type="file" formControlName="image" (change)="onImageSelected($event)" required ></ion-input>
+    </ion-item>
+    <ion-button (click)="onCreate()">
+      <ion-icon name="add"></ion-icon>
+      Create
+    </ion-button>
+  </form>
+  <table>
+    <tr>
+      <th>S.no</th>
+      <th>Name</th>
+      <th>Detail</th>
+      <th>Image</th>
+    </tr>
+    <tr *ngFor="let dataa of data; let i=index;">
+      <td>{{i+1}}</td>
+      <td>{{dataa.name}}</td>
+      <td>{{dataa.detail}}</td>
+      <td><img src="http://127.0.0.1:8000/images/{{dataa.image}}" alt="images" /></td>
+    </tr>
+  </table>
+</ion-content>
+<script type="text/javascript">
+  function show(input) {
+      var fileName = input.files[0].name;
+      alert('The file "' + fileName + '" has been selected.');               
+          }
+
+</script>

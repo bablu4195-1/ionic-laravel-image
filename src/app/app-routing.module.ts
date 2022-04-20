@@ -8,8 +8,12 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'master',
     pathMatch: 'full'
+  },
+  {
+    path: 'master',
+    loadChildren: () => import('./master/master.module').then( m => m.MasterPageModule)
   },
 ];
 
